@@ -13,10 +13,10 @@ const Repos  = () => {
     })
    }, [url])
 
-   return (
+  return (
        <div>
         <div>
-       <h1 className="id">{this.state.repo.id}</h1>
+       <h1 className="id">{}</h1>
        </div>
        <div className="name">{repo.name}
            </div>
