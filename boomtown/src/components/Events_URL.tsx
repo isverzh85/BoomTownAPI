@@ -9,12 +9,10 @@ export interface Events {
     created_at: number;
 }
 
-
 const Events  = () => {
     const [events, setEvents] = useState(['']);
     const url = ("https://api.github.com/orgs/BoomTownROI/events")
     
-
    useEffect(() => {
     axios.get(url)
     .then(response => {
@@ -23,6 +21,11 @@ const Events  = () => {
     })
    }, [url])
 
+   const renderListOfNames = (names) => {
+        names.map((name)) => {
+            return(<li>{name.id}</li>)
+        }
+    }
 
    return (
        <div>
@@ -32,7 +35,7 @@ const Events  = () => {
          <div className="type">{events.map(type => type)}
            </div>
            <div>
-             <h1>{events.map(name=> name)}</h1>
+             <ul>{renderListOfEvents(name)}</ul>
            </div>
            <div>
               <h1>{events.map(url => url)}</h1>
